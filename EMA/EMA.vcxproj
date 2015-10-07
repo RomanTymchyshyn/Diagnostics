@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2A1A1CB3-F7B9-4A32-AE8C-3CE161C442D6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>EMA</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glut32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Diagnostics.cpp" />
+    <ClCompile Include="Solvers\Support\ConvHull.cpp" />
+    <ClCompile Include="Vendor\cpp\src\alglibinternal.cpp" />
+    <ClCompile Include="Vendor\cpp\src\alglibmisc.cpp" />
+    <ClCompile Include="Vendor\cpp\src\ap.cpp" />
+    <ClCompile Include="Vendor\cpp\src\linalg.cpp" />
+    <ClCompile Include="Vendor\cpp\src\specialfunctions.cpp" />
+    <ClCompile Include="Vendor\cpp\src\statistics.cpp" />
+    <ClCompile Include="Drawing.cpp" />
+    <ClCompile Include="Solvers\GeneticEllipsoidBuilder.cpp" />
+    <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="Solvers\KhachiyanEllipsoidBuilder.cpp" />
+    <ClCompile Include="Solvers\Support\KhachiyanSup.cpp" />
+    <ClCompile Include="MAIN.cpp" />
+    <ClCompile Include="GeomFigures.cpp" />
+    <ClCompile Include="Solvers\Support\MatrixAlgo.cpp" />
+    <ClCompile Include="Solvers\MatrixEllipsoidBuilder.cpp" />
+    <ClCompile Include="MouseHandler.cpp" />
+    <ClCompile Include="Solvers\Support\Petunin.cpp" />
+    <ClCompile Include="Solvers\PetuninEllipsoidBuilder.cpp" />
+    <ClCompile Include="Solvers\RublevEllipsoidBuilder.cpp" />
+    <ClCompile Include="Solvers\Support\RublevSup.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Input Data.txt" />
+    <None Include="Resources\Multidimensional Input.txt" />
+    <None Include="Resources\Output Data.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Diagnostics.h" />
+    <ClInclude Include="Solvers\Support\ConvHull.h" />
+    <ClInclude Include="Vendor\cpp\src\alglibinternal.h" />
+    <ClInclude Include="Vendor\cpp\src\alglibmisc.h" />
+    <ClInclude Include="Vendor\cpp\src\ap.h" />
+    <ClInclude Include="Vendor\cpp\src\linalg.h" />
+    <ClInclude Include="Vendor\cpp\src\specialfunctions.h" />
+    <ClInclude Include="Vendor\cpp\src\statistics.h" />
+    <ClInclude Include="Drawing.h" />
+    <ClInclude Include="Solvers\EllipsoidBuilders.h" />
+    <ClInclude Include="Solvers\GeneticEllipsoidBuilder.h" />
+    <ClInclude Include="GeomFigures.h" />
+    <ClInclude Include="Helper.h" />
+    <ClInclude Include="Solvers\IEllipsoidBuilder.h" />
+    <ClInclude Include="Solvers\IEllipsoidWrapBuilder.h" />
+    <ClInclude Include="Solvers\IEllipsoidWrapper.h" />
+    <ClInclude Include="Solvers\KhachiyanEllipsoidBuilder.h" />
+    <ClInclude Include="Solvers\Support\KhachiyanSup.h" />
+    <ClInclude Include="Solvers\Support\MatrixAlgo.h" />
+    <ClInclude Include="Solvers\MatrixEllipsoidBuilder.h" />
+    <ClInclude Include="MouseHandler.h" />
+    <ClInclude Include="Solvers\Support\Petunin.h" />
+    <ClInclude Include="Solvers\PetuninEllipsoidBuilder.h" />
+    <ClInclude Include="Solvers\RublevEllipsoidBuilder.h" />
+    <ClInclude Include="Solvers\Support\RublevSup.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
